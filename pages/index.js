@@ -1,35 +1,24 @@
-import Head from 'next/head'
-import Image from 'next/image'
-
 export default function Home() {
   return (
-    <div>
-      <Head>
-        <title>Liveheats Homepage</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <main className="flex-1">
+      <div className="py-6">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h1 className="text-2xl font-semibold text-gray-900">Home page</h1>
+        </div>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+          <div className="py-4">
+            <div className="h-96 rounded-lg border-4 border-dashed border-gray-200" />
+          </div>
+        </div>
+      </div>
+    </main>
+  )
+}
 
-      <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+Home.getLayout = function getLayout(page) {
+  return (
+    <>
+      {page}
+    </>
   )
 }
