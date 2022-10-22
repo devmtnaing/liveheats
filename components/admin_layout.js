@@ -1,32 +1,51 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { classNames } from '../utils/helpers'
-import { Fragment, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
+import Image from "next/image";
+import Link from "next/link";
+import { classNames } from "../utils/helpers";
+import { Fragment, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import PropTypes from "prop-types";
 import {
   Bars3Icon,
   HomeIcon,
   RocketLaunchIcon,
   UsersIcon,
   XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { AdminProvider } from '../context/admin'
+} from "@heroicons/react/24/outline";
+import { AdminProvider } from "../context/admin";
 
 const navigation = [
-  { name: 'Dashboard', href: '/admin', icon: HomeIcon, current: true },
-  { name: 'Students', href: '/admin/students', icon: UsersIcon, current: false },
-  { name: 'Races', href: '/admin/races', icon: RocketLaunchIcon, current: false }
-]
+  { name: "Dashboard", href: "/admin", icon: HomeIcon, current: true },
+  {
+    name: "Students",
+    href: "/admin/students",
+    icon: UsersIcon,
+    current: false,
+  },
+  {
+    name: "Races",
+    href: "/admin/races",
+    icon: RocketLaunchIcon,
+    current: false,
+  },
+];
+
+AdminLayout.propTypes = {
+  children: PropTypes.element,
+};
 
 export default function AdminLayout({ children }) {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <>
       <AdminProvider>
         <div>
           <Transition.Root show={sidebarOpen} as={Fragment}>
-            <Dialog as="div" className="relative z-40 md:hidden" onClose={setSidebarOpen}>
+            <Dialog
+              as="div"
+              className="relative z-40 md:hidden"
+              onClose={setSidebarOpen}
+            >
               <Transition.Child
                 as={Fragment}
                 enter="transition-opacity ease-linear duration-300"
@@ -66,7 +85,10 @@ export default function AdminLayout({ children }) {
                           onClick={() => setSidebarOpen(false)}
                         >
                           <span className="sr-only">Close sidebar</span>
-                          <XMarkIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                          <XMarkIcon
+                            className="h-6 w-6 text-white"
+                            aria-hidden="true"
+                          />
                         </button>
                       </div>
                     </Transition.Child>
@@ -82,20 +104,21 @@ export default function AdminLayout({ children }) {
                       </div>
                       <nav className="mt-5 space-y-1 px-2">
                         {navigation.map((item) => (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                          >
-                            <a 
+                          <Link key={item.name} href={item.href}>
+                            <a
                               className={classNames(
-                                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
+                                item.current
+                                  ? "bg-gray-900 text-white"
+                                  : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                               )}
                             >
                               <item.icon
                                 className={classNames(
-                                  item.current ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-300',
-                                  'mr-3 flex-shrink-0 h-6 w-6'
+                                  item.current
+                                    ? "text-gray-300"
+                                    : "text-gray-400 group-hover:text-gray-300",
+                                  "mr-3 flex-shrink-0 h-6 w-6"
                                 )}
                                 aria-hidden="true"
                               />
@@ -118,8 +141,12 @@ export default function AdminLayout({ children }) {
                             />
                           </div>
                           <div className="ml-3">
-                            <p className="text-base font-medium text-white">Min Thet Naing</p>
-                            <p className="text-sm font-medium text-gray-400 group-hover:text-gray-300">View profile</p>
+                            <p className="text-base font-medium text-white">
+                              Min Thet Naing
+                            </p>
+                            <p className="text-sm font-medium text-gray-400 group-hover:text-gray-300">
+                              View profile
+                            </p>
                           </div>
                         </div>
                       </a>
@@ -144,20 +171,21 @@ export default function AdminLayout({ children }) {
                 </div>
                 <nav className="mt-5 flex-1 space-y-1 px-2">
                   {navigation.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                    >
-                      <a 
+                    <Link key={item.name} href={item.href}>
+                      <a
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
+                          item.current
+                            ? "bg-gray-900 text-white"
+                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                          "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                         )}
                       >
                         <item.icon
                           className={classNames(
-                            item.current ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-300',
-                            'mr-3 flex-shrink-0 h-6 w-6'
+                            item.current
+                              ? "text-gray-300"
+                              : "text-gray-400 group-hover:text-gray-300",
+                            "mr-3 flex-shrink-0 h-6 w-6"
                           )}
                           aria-hidden="true"
                         />
@@ -180,8 +208,12 @@ export default function AdminLayout({ children }) {
                       />
                     </div>
                     <div className="ml-3">
-                      <p className="text-sm font-medium text-white">Min Thet Naing</p>
-                      <p className="text-xs font-medium text-gray-300 group-hover:text-gray-200">View profile</p>
+                      <p className="text-sm font-medium text-white">
+                        Min Thet Naing
+                      </p>
+                      <p className="text-xs font-medium text-gray-300 group-hover:text-gray-200">
+                        View profile
+                      </p>
                     </div>
                   </div>
                 </a>
@@ -204,5 +236,5 @@ export default function AdminLayout({ children }) {
         </div>
       </AdminProvider>
     </>
-  )
+  );
 }

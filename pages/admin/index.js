@@ -1,4 +1,4 @@
-import AdminLayout from '../../components/admin_layout'
+import AdminLayout from "../../components/admin_layout";
 
 export default function AdminIndex() {
   return (
@@ -6,7 +6,9 @@ export default function AdminIndex() {
       <div className="bg-white">
         <div className="mx-auto max-w-7xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-lg font-semibold text-indigo-600">Admin Dashboard</h2>
+            <h2 className="text-lg font-semibold text-indigo-600">
+              Admin Dashboard
+            </h2>
             <p className="mt-1 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
               Some cool Analytics should be here.
             </p>
@@ -17,13 +19,9 @@ export default function AdminIndex() {
         </div>
       </div>
     </main>
-  )
+  );
 }
 
 AdminIndex.getLayout = function getLayout(page) {
-  return (
-    <AdminLayout>
-      {page}
-    </AdminLayout>
-  )
-}
+  return <AdminLayout>{page}</AdminLayout>;
+};

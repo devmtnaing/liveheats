@@ -1,10 +1,10 @@
 export function student(state, action) {
   switch (action.type) {
     case "ADDED_STUDENT":
-      return { 
+      return {
         ...state,
-        students: [action.payload, ...state.students] 
-      }
+        students: [action.payload, ...state.students],
+      };
     default:
       return state;
   }

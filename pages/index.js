@@ -12,13 +12,9 @@ export default function Home() {
         </div>
       </div>
     </main>
-  )
+  );
 }
 
 Home.getLayout = function getLayout(page) {
-  return (
-    <>
-      {page}
-    </>
-  )
-}
+  return <>{page}</>;
+};
