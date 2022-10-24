@@ -64,13 +64,7 @@ function StudentListView(state) {
                         scope="col"
                         className="sticky top-0 z-10 border-b border-gray-300 bg-gray-50 bg-opacity-75 py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter sm:pl-6 lg:pl-8"
                       >
-                        First Name
-                      </th>
-                      <th
-                        scope="col"
-                        className="sticky top-0 z-10 hidden border-b border-gray-300 bg-gray-50 bg-opacity-75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter sm:table-cell"
-                      >
-                        Last Name
+                        Name
                       </th>
                       <th
                         scope="col"
@@ -83,6 +77,12 @@ function StudentListView(state) {
                         className="sticky top-0 z-10 hidden border-b border-gray-300 bg-gray-50 bg-opacity-75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter lg:table-cell"
                       >
                         Address
+                      </th>
+                      <th
+                        scope="col"
+                        className="sticky top-0 z-10 border-b border-gray-300 bg-gray-50 bg-opacity-75 py-3.5 pr-4 pl-3 backdrop-blur backdrop-filter sm:pr-6 lg:pr-8"
+                      >
+                        <span className="sr-only">View</span>
                       </th>
                       <th
                         scope="col"
@@ -103,17 +103,7 @@ function StudentListView(state) {
                             "whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8"
                           )}
                         >
-                          {student.firstName}
-                        </td>
-                        <td
-                          className={classNames(
-                            studentIdx !== state.students.length - 1
-                              ? "border-b border-gray-200"
-                              : "",
-                            "whitespace-nowrap px-3 py-4 text-sm text-gray-500 hidden sm:table-cell"
-                          )}
-                        >
-                          {student.lastName}
+                          {student.name}
                         </td>
                         <td
                           className={classNames(
@@ -143,15 +133,27 @@ function StudentListView(state) {
                             "relative whitespace-nowrap py-4 pr-4 pl-3 text-right text-sm font-medium sm:pr-6 lg:pr-8"
                           )}
                         >
-                          <a
-                            href="#"
-                            className="text-indigo-600 hover:text-indigo-900"
-                          >
-                            Edit
-                            <span className="sr-only">
-                              , {student.firstName}
-                            </span>
-                          </a>
+                          <Link href={`/admin/students/${student.id}`}>
+                            <a className="text-indigo-600 hover:text-indigo-900">
+                              View
+                              <span className="sr-only">, {student.name}</span>
+                            </a>
+                          </Link>
+                        </td>
+                        <td
+                          className={classNames(
+                            studentIdx !== state.students.length - 1
+                              ? "border-b border-gray-200"
+                              : "",
+                            "relative whitespace-nowrap py-4 pr-4 pl-3 text-right text-sm font-medium sm:pr-6 lg:pr-8"
+                          )}
+                        >
+                          <Link href={`/admin/students/${student.id}/edit`}>
+                            <a className="text-indigo-600 hover:text-indigo-900">
+                              Edit
+                              <span className="sr-only">, {student.name}</span>
+                            </a>
+                          </Link>
                         </td>
                       </tr>
                     ))}

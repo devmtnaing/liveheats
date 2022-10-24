@@ -7,8 +7,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 
 const StudentCreateSchema = Yup.object().shape({
-  firstName: Yup.string().required("Required"),
-  lastName: Yup.string().required("Required"),
+  name: Yup.string().required("Required"),
   email: Yup.string().email("Invalid email").required("Required"),
   address: Yup.string().min(2, "Too short!"),
 });
@@ -28,8 +27,7 @@ export default function StudentsCreate() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
           <Formik
             initialValues={{
-              firstName: "",
-              lastName: "",
+              name: "",
               email: "",
               address: "",
             }}
@@ -57,40 +55,20 @@ export default function StudentsCreate() {
                     <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
                       <div className="sm:col-span-3">
                         <label
-                          htmlFor="firstName"
+                          htmlFor="name"
                           className="block text-sm font-medium text-gray-700"
                         >
-                          First name
+                          Name
                         </label>
                         <div className="mt-1">
                           <Field
-                            id="firstName"
-                            name="firstName"
+                            id="name"
+                            name="name"
                             type="text"
                             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                           />
-                          {errors.firstName && touched.firstName ? (
-                            <div>{errors.firstName}</div>
-                          ) : null}
-                        </div>
-                      </div>
-
-                      <div className="sm:col-span-3">
-                        <label
-                          htmlFor="lastName"
-                          className="block text-sm font-medium text-gray-700"
-                        >
-                          Last name
-                        </label>
-                        <div className="mt-1">
-                          <Field
-                            id="lastName"
-                            name="lastName"
-                            type="text"
-                            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                          />
-                          {errors.lastName && touched.lastName ? (
-                            <div>{errors.lastName}</div>
+                          {errors.name && touched.name ? (
+                            <div>{errors.name}</div>
                           ) : null}
                         </div>
                       </div>

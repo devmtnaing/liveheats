@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is an experimental project using mainly [Next.js](https://nextjs.org/) and [Tailwincss](https://tailwindcss.com).
+
+The main focus is to allow teachers to create studnets and races. The teacher is to
+register studnets into races and record the results.
+
+It has been a long time since I wrote react. The code so far might know follow the best practices.
 
 ## Getting Started
 
@@ -10,33 +15,21 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000/admin](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+As of now, There are no authentication nor landing page.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Things to work on
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-- Fix `.../.../` folder strucutre problem
-- refactor NoContent and List view
-- refactor dispatch/reducers
+- Refactor (standardised duplicated views/funtions, separate out logics stuffed in files from `pages` folder)
+- Test cases
+- Fix requiring absolute path while importing (E.g `.../.../`)
 - look into code splitting
 - find out more on how to write better nextjs
 - better folder strucutre
 - Do authentication
+- Add animiaton or good page/action transitions
+- come up with better UX
+- Typescript
+- dockerize
+- 404 page

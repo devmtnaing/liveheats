@@ -144,9 +144,6 @@ export default function AdminLayout({ children }) {
                             <p className="text-base font-medium text-white">
                               Min Thet Naing
                             </p>
-                            <p className="text-sm font-medium text-gray-400 group-hover:text-gray-300">
-                              View profile
-                            </p>
                           </div>
                         </div>
                       </a>
@@ -210,9 +207,6 @@ export default function AdminLayout({ children }) {
                     <div className="ml-3">
                       <p className="text-sm font-medium text-white">
                         Min Thet Naing
-                      </p>
-                      <p className="text-xs font-medium text-gray-300 group-hover:text-gray-200">
-                        View profile
                       </p>
                     </div>
                   </div>
