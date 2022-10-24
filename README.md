@@ -20,6 +20,10 @@ Open [http://localhost:3000/admin](http://localhost:3000) with your browser to s
 
 As of now, There are no authentication flow.
 
+## Demo
+
+Live demo is also available [here](https://liveheats.vercel.app/admin).
+
 ## Diagrams
 
 The following is just a rough [ER diagram](https://dbdiagram.io/d/6356e7c6fa2755667d621a78) of the system.
