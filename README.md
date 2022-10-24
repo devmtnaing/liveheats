@@ -3,7 +3,7 @@ This is an experimental project using mainly [Next.js](https://nextjs.org/) and 
 The main focus is to allow teachers to create studnets and races. The teacher is to
 register studnets into races and record the results.
 
-It has been a long time since I wrote react. The code so far might know follow the best practices.
+It has been a long time since I wrote react. The code so far might not follow the best practices.
 
 ## Getting Started
 
