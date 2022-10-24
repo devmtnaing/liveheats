@@ -150,7 +150,16 @@ function addLane(values, setFieldValue) {
   setFieldValue("lanes", values.lanes);
 }
 
-function removeLane(values, setFieldValue) {
+function removeLane(
+  values,
+  setFieldValue,
+  assignedParticipants,
+  setAssignedParticipants
+) {
+  let toRemoveLane = values.lanes.at(-1);
+  setAssignedParticipants(
+    assignedParticipants.filter((a) => a != toRemoveLane.participant_id)
+  );
   values.lanes.pop();
   setFieldValue("lanes", values.lanes);
 }
@@ -190,6 +199,7 @@ export default function RacesCreate() {
   const [selectedStudent, setSelected] = useState();
   const [assignedParticipants, setAssignedParticipants] = useState([]);
   const [query, setQuery] = useState("");
+
   const filteredStudents =
     query === ""
       ? state.students.filter(
@@ -296,7 +306,14 @@ export default function RacesCreate() {
                         <button
                           type="button"
                           className="group -ml-1 flex items-center rounded-md bg-white p-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                          onClick={() => removeLane(values, setFieldValue)}
+                          onClick={() =>
+                            removeLane(
+                              values,
+                              setFieldValue,
+                              assignedParticipants,
+                              setAssignedParticipants
+                            )
+                          }
                         >
                           <span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-dashed border-red-300 text-red-400">
                             <MinusIcon
