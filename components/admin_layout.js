@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { classNames } from "../utils/helpers";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import PropTypes from "prop-types";
