@@ -10,14 +10,20 @@ It has been a long time since I wrote react. The code so far might not follow th
 First, run the development server:
 
 ```bash
+npm install
 npm run dev
 # or
-yarn dev
+yarn && yarn dev
 ```
 
 Open [http://localhost:3000/admin](http://localhost:3000) with your browser to see the result.
 
-As of now, There are no authentication nor landing page.
+As of now, There are no authentication flow.
+
+## Diagrams
+
+The following is just a rough [ER diagram](https://dbdiagram.io/d/6356e7c6fa2755667d621a78) of the system.
+![ER diagram](./diagrams/LiveHeats%20assignment.png)
 
 ## Things to work on
 
