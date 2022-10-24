@@ -190,8 +190,6 @@ export default function RacesCreate() {
   const [selectedStudent, setSelected] = useState();
   const [assignedParticipants, setAssignedParticipants] = useState([]);
   const [query, setQuery] = useState("");
-  console.log(assignedParticipants);
-
   const filteredStudents =
     query === ""
       ? state.students.filter(

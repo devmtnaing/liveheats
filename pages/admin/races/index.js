@@ -147,8 +147,6 @@ function RaceListView(state, setOpen, setRaceId, setAvailableRanks) {
                                   existingRanks.push(parseInt(lane.rank));
                                 }
                               });
-                              console.log("r", ranks);
-                              console.log("er", existingRanks);
                               setAvailableRanks(
                                 ranks.filter((r) => !existingRanks.includes(r))
                               );
