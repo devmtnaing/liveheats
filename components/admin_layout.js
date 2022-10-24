@@ -105,21 +105,9 @@ export default function AdminLayout({ children }) {
                       <nav className="mt-5 space-y-1 px-2">
                         {navigation.map((item) => (
                           <Link key={item.name} href={item.href}>
-                            <a
-                              className={classNames(
-                                item.current
-                                  ? "bg-gray-900 text-white"
-                                  : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                                "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-                              )}
-                            >
+                            <a className="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                               <item.icon
-                                className={classNames(
-                                  item.current
-                                    ? "text-gray-300"
-                                    : "text-gray-400 group-hover:text-gray-300",
-                                  "mr-3 flex-shrink-0 h-6 w-6"
-                                )}
+                                className="text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 h-6 w-6"
                                 aria-hidden="true"
                               />
                               {item.name}
@@ -169,21 +157,9 @@ export default function AdminLayout({ children }) {
                 <nav className="mt-5 flex-1 space-y-1 px-2">
                   {navigation.map((item) => (
                     <Link key={item.name} href={item.href}>
-                      <a
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-                        )}
-                      >
+                      <a className="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                         <item.icon
-                          className={classNames(
-                            item.current
-                              ? "text-gray-300"
-                              : "text-gray-400 group-hover:text-gray-300",
-                            "mr-3 flex-shrink-0 h-6 w-6"
-                          )}
+                          className="text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 h-6 w-6"
                           aria-hidden="true"
                         />
                         {item.name}

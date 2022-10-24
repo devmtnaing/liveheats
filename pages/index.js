@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main className="flex-1">
@@ -7,7 +9,11 @@ export default function Home() {
         </div>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
           <div className="py-4">
-            <div className="h-96 rounded-lg border-4 border-dashed border-gray-200" />
+            <Link href="/admin/">
+              <a href="#" className="group block flex-shrink-0 text-blue-600">
+                Click here to go to Dashboard page
+              </a>
+            </Link>
           </div>
         </div>
       </div>
